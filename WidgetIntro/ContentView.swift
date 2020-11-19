@@ -6,11 +6,23 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, world!")
+                .padding()
+            
+            InfoboxView()
+            
+            Button(action: {
+                WidgetCenter.shared.reloadAllTimelines()
+            }) {
+                Text("Ladda om widget")
+            }
+            
+        }
     }
 }
 
